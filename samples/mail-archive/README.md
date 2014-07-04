@@ -21,3 +21,16 @@ in this sample so far.
 
 Stats (even more work in progress) are available at 
 http://localhost:8080/content/mailarchiveserver/stats.html
+
+
+
+## Sling Metrics integration
+
+1. Start the VM with ```vagrant up``` (the VM is based on [this](https://github.com/digital-wonderland/packer-templates/tree/master/CentOS-6-x86_64) template but any CentOS 6 with EPEL enabled should do fine)
+2. Verify [Graphite](http://graphite.wikidot.com/) is available at [localhost:8888](http://localhost:8888/) (if you get a 500 ssh into the VM with ```vagrant ssh``` and restart httpd: ```sudo service httpd restart``` - happens sometimes due to a race condition in the httpd / graphite integration)
+3. Install ```sling-metrics-bundle``` and its dependencies
+4. Enable the Graphite reporter in the OSGi configuration
+5. Enjoy
+
+Please keep in mind that everything is tracked as [Counter](http://metrics.codahale.com/manual/core/#counters). 
+This means to see the difference between points in time one has to apply the [nonNegativeDerivative](http://graphite.readthedocs.org/en/latest/functions.html#graphite.render.functions.nonNegativeDerivative) function.
