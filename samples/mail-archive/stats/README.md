@@ -1,7 +1,7 @@
-Apache Sling mail archive server stats
-======================================
+Apache Sling mail archive server metrics
+========================================
 
-This is a work in progress stats module for the Sling mail archive
+This is a work in progress metrics module for the Sling mail archive
 server.
 
 To demonstrate it, load some data and look at 

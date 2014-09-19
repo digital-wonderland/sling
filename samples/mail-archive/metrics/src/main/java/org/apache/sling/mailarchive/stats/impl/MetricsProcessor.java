@@ -46,8 +46,7 @@ public class MetricsProcessor implements MessageProcessor {
     }
 
     private Counter getUserCounter(final String tld, final String org, final String user) {
-        final String name = metricService.name(tld, org, user);
-        return metricService.counter(name);
+        return metricService.counter("mails." + tld + "." + org + "." + user);
     }
 
     private String getTld(final String sender) {
@@ -55,8 +54,7 @@ public class MetricsProcessor implements MessageProcessor {
     }
 
     private Counter getTldCounter(final String tld) {
-        final String name = metricService.name(tld);
-        return metricService.counter(name);
+        return metricService.counter("mails." + tld);
     }
 
     private String getReversedOrganization(final String sender) {
@@ -68,8 +66,7 @@ public class MetricsProcessor implements MessageProcessor {
     }
 
     private Counter getOrganizationCounter(final String tld, final String org) {
-        final String name = metricService.name(tld, org);
-        return metricService.counter(name);
+        return metricService.counter("mails." + tld + "." + org);
     }
 
 }

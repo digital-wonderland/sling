@@ -30,6 +30,7 @@
         <module>server</module>
         <module>ui</module>
         <module>stats</module>
+        <module>metrics</module>
         <module>james-wrapper</module>
     </modules>
 </project>
