@@ -15,7 +15,7 @@ Example how to collect & store metrics via [sling-metrics](https://github.com/di
 8. metrics-core-3.0.1.jar 
 9. metrics-graphite-3.0.1.jar
 10. metrics-healthchecks-3.0.1.jar
-11. metrics-json-3.0.1.jar
+11. metrics-json-3.0.1.jar         
 12. metrics-jvm-3.0.1.jar
 13. metrics-servlets-3.0.1.jar
 14. org.apache.sling.mailarchive.server-0.1.0-SNAPSHOT.jar
@@ -23,15 +23,17 @@ Example how to collect & store metrics via [sling-metrics](https://github.com/di
 
 ## Configuration
 
-Once all bundles are installed & running reporting to Graphite must be configured & enabled. 
-Hostname, port and prefix can be configured in the OSGi configuration of ```Sling Metrics :: Reporter :: Graphite```.
+Once all bundles are installed & running, reporting to Graphite must be configured & enabled. 
+_Hostname_, _port_ and _prefix_ of your Graphite instance can be configured in the OSGi configuration of ```Sling Metrics :: Reporter :: Graphite```.
 
 ## Graphite
 
-All metrics are tracked as [Counter](http://metrics.codahale.com/manual/core/#counters). This means to see the difference 
+Naturally you need a running Graphite instance. The ```nickstenning/graphite``` Docker image is said to be working.
+
+Also keep in mind that all metrics are tracked as [counters](http://metrics.codahale.com/manual/core/#counters). This means to see the difference 
 between points in time one has to apply the [nonNegativeDerivative](http://graphite.readthedocs.org/en/latest/functions.html#graphite.render.functions.nonNegativeDerivative) function.
 
-Data can be fed into Graphite i.e. with ```nc```:
+To feed data into Graphite / Carbon it must follow the ```<metric path> <metric value> <metric timestamp>``` [format](http://graphite.readthedocs.org/en/latest/feeding-carbon.html). Then it can be imported i.e. with ```nc```:
 
 ```
 PORT=2003
