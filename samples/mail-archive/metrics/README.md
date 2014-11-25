@@ -12,10 +12,10 @@ Example how to collect & store metrics via [sling-metrics](https://github.com/di
 5. jackson-annotations-2.2.2.jar
 6. jackson-core-2.2.2.jar
 7. jackson-databind-2.2.2.jar
-8. metrics-core-3.0.1.jar 
+8. metrics-core-3.0.1.jar
 9. metrics-graphite-3.0.1.jar
 10. metrics-healthchecks-3.0.1.jar
-11. metrics-json-3.0.1.jar         
+11. metrics-json-3.0.1.jar
 12. metrics-jvm-3.0.1.jar
 13. metrics-servlets-3.0.1.jar
 14. org.apache.sling.mailarchive.server-0.1.0-SNAPSHOT.jar
