@@ -42,7 +42,7 @@ echo "sling.metrics.mails.com.example.john.count 3 `date +%s`" | nc ${SERVER} ${
 echo "sling.metrics.mails.com.example.jane.count 5 `date +%s`" | nc ${SERVER} ${PORT};
 ```
 
-To generate a stacked graph i.e. comparing mails from ```adobe.com``` vs ```adobe.org``` use something like the following (assuming Graphite web interface is running at ```localhost:8888```: 
+To generate a stacked graph i.e. comparing mails from ```example.com``` vs ```example.org``` use something like the following (assuming Graphite web interface is running at ```localhost:8888```: 
 ```
-http://localhost:8888/render/?width=586&height=308&_salt=1411129768.655&target=nonNegativeDerivative(sling.metrics.*.mails.com.adobe.count)&target=nonNegativeDerivative(sling.metrics.*.mails.org.adobe.count)&areaMode=stacked
+http://localhost:8888/render/?width=586&height=308&_salt=1411129768.655&target=nonNegativeDerivative(sling.metrics.*.mails.com.example.count)&target=nonNegativeDerivative(sling.metrics.*.mails.org.example.count)&areaMode=stacked
 ```
